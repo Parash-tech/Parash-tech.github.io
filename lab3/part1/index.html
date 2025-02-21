@@ -30,13 +30,18 @@ h2 {
   font-weight: bold;
 }
 
-a:link,
-a:visited {
-  color: #fb6542;
+
+a[href^="mailto:"] {
+color: green;
+}
+a[href^="http"] {
+  color: red;
 }
 
-a:hover {
-  text-decoration: none;
+a:visited {
+  color: #FF0000;
+}
+
 }
 </style>
 </head>
