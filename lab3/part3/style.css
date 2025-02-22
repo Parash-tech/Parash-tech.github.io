@@ -115,9 +115,6 @@ a:active {
                0px 0px 4px black;
 }
 
-/* lists: extra margin top and bottom to make it
-always have the same spacing as with paragraphs */
-
 ul, ol {
   margin: 1.6rem 0;
 }
