@@ -2,8 +2,22 @@
 
 * {
     box-sizing: border-box;
-  }
-  
+}
+@font-face {
+  font-family: 'BodyFont';
+  src: url('body-font.woff2') format('woff2'),
+       url('body-font.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'HeadingFont';
+  src: url('heading-font.woff2') format('woff2'),
+       url('heading-font.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+} 
   body {
     margin: 0 auto;
     min-width: 1000px;
