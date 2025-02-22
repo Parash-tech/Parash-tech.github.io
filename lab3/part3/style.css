@@ -56,7 +56,7 @@ aside {
     border-bottom: 5px solid #a66;
 }
   h1 {
-    font-size: 2.4rem; 
+    font-size: 2.8rem; 
     text-align: center; 
     letter-spacing: 0.1rem;
     margin-top: 0;
@@ -66,8 +66,22 @@ aside {
     font-family: cursive;
     
 }  
-  body {
+  
+body {
 
     letter-spacing: 0.05rem; 
     word-spacing: 0.1rem; 
 }
+
+section h2 + p {
+  text-indent: 20px;
+}
+
+p, li {
+  font-size: 1rem;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+  word-spacing: 3px;
+}
+
+
