@@ -6,6 +6,7 @@ const overlay = document.querySelector('.overlay');
 
 /* Declaring the array of image filenames */
 const imageFiles = ['pic1.jpg', 'pic2.jpg', 'pic3.jpg', 'pic4.jpg', 'pic5.jpg'];
+
 /* Declaring the alternative text for each image file */
 const altTexts = {
     'pic1.jpg': 'A beautiful sunset over the ocean.',
@@ -14,17 +15,18 @@ const altTexts = {
     'pic4.jpg': 'A forest path surrounded by tall trees.',
     'pic5.jpg': 'A close-up of a colorful flower.'
 };
+
 /* Looping through images */
 imageFiles.forEach(file => {
-   const newImage = document.createElement('img');
-   newImage.setAttribute('src', `image/${file}`);
-   newImage.setAttribute('alt', altTexts[file]);
-   thumbBar.appendChild(newImage);
+    const newImage = document.createElement('img');
+    newImage.setAttribute('src', `images/${file}`);
+    newImage.setAttribute('alt', altTexts[file]);
+    thumbBar.appendChild(newImage);
 
-   // Click event to update displayed image
-   newImage.addEventListener('click', () => {
-      displayedImage.setAttribute('src', `images/${file}`);
-      displayedImage.setAttribute('alt', altTexts[file]);
+    // Click event to update displayed image
+    newImage.addEventListener('click', () => {
+        displayedImage.setAttribute('src', `images/${file}`);
+        displayedImage.setAttribute('alt', altTexts[file]);
     });
 });
 
