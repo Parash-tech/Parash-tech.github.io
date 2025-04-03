@@ -15,10 +15,16 @@ const altTexts = {
     'pic5.jpg': 'A close-up of a colorful flower.'
 };
 /* Looping through images */
-
-const newImage = document.createElement('img');
-newImage.setAttribute('src', xxx);
-newImage.setAttribute('alt', xxx);
-thumbBar.appendChild(newImage);
+imageFiles.forEach(file => {
+   const newImage = document.createElement('img');
+   newImage.setAttribute('src', `image/${file}`);
+   newImage.setAttribute('alt', altTexts[file]);
+   thumbBar.appendChild(newImage);
+   // Click event to update displayed image
+   newImage.addEventListener('click', () => {
+      displayedImage.setAttribute('src', `images/${file}`);
+      displayedImage.setAttribute('alt', altTexts[file]);
+    });
+});
 
 /* Wiring up the Darken/Lighten button */
