@@ -1,16 +1,20 @@
 // set up canvas
 
+const para = document.querySelector('p');
+let count = 0;
+
 const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
 
-const width = (canvas.width = window.innerWidth);
-const height = (canvas.height = window.innerHeight);
+const width = canvas.width = window.innerWidth;
+const height = canvas.height = window.innerHeight;
 
 // function to generate random number
 
 function random(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+  const num= Math.floor(Math.random() * (max - min)) + min;
+  return num;
+};
 
 // function to generate random RGB color value
 
@@ -44,20 +48,20 @@ class Ball extends Shape {
   }
 
   update() {
-    if (this.x + this.size >= width) {
-      this.velX = -Math.abs(this.velX);
+    if ((this.x + this.size) >= width) {
+      this.velX = -(this.velX);
     }
 
-    if (this.x - this.size <= 0) {
-      this.velX = Math.abs(this.velX);
+    if ((this.x - this.size) <= 0) {
+      this.velX = -(this.velX);
     }
 
-    if (this.y + this.size >= height) {
-      this.velY = -Math.abs(this.velY);
+    if ((this.y + this.size) >= height) {
+      this.velY = -(this.velY);
     }
 
-    if (this.y - this.size <= 0) {
-      this.velY = Math.abs(this.velY);
+    if ((this.y - this.size) <= 0) {
+      this.velY = -(this.velY);
     }
 
     this.x += this.velX;
@@ -171,16 +175,21 @@ while (balls.length < 25) {
 const evilBall = new EvilCircle(random(0, width), random(0, height));
 
 function loop() {
-  ctx.fillStyle = "rgba(0, 0, 0, 0.25)";
+  ctx.fillStyle = 'rgba(0, 0, 0, 0.25)';
   ctx.fillRect(0, 0, width, height);
 
   for (const ball of balls) {
-    ball.draw();
-    ball.update();
-    ball.collisionDetect();
+    if (ball.exists) {
+      ball.draw();
+      ball.update();
+      ball.collisionDetect();
   }
+ }
 
-  requestAnimationFrame(loop);
+ evilBall.draw();
+ evilBall.checkBounds();
+ evilBall.collisionDetect();
+ requestAnimationFrame(loop);
 }
 
 loop();
