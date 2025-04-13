@@ -24,19 +24,22 @@ Description: Accessibility Troubleshooting
       Skip to main content
     </a>
 
-    <div class="nav">
+    <nav>
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Our team</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#">Blog</a></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#ourTeam">Our team</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#blog">Blog</a></li>
       </ul>
 
       <form class="search">
-        <input type="search" name="q" placeholder="Search query">
-        <input type="submit" value="Go!">
+        <label for="site-search">Search the site:</label>
+        <input type="search" id="site-search" name="q" placeholder="Search query"
+        aria-label="Search through site content">
+        <button>Go!</button>
       </form>
-    </div>
+      
+    </nav>
 
     <main>
       <article>
